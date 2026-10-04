@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+  <meta name="theme-color" content="#000000">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Videos">
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="assets/icon-192.png">
+  <link rel="stylesheet" href="styles.css">
+  <title>Videos</title>
+</head>
+<body>
+  <main id="app">
+    <section id="feed" aria-label="Video feed"></section>
+
+    <div id="empty" class="empty">
+      <div class="empty-card">
+        <h1>Videos</h1>
+        <p>Add your videos and watch them offline in a TikTok-style feed.</p>
+        <button id="addFirst" class="primary">＋ Add videos</button>
+      </div>
+    </div>
+
+    <header class="topbar">
+      <div class="brand">Videos</div>
+      <button id="addBtn" class="icon-btn" aria-label="Add videos">＋</button>
+    </header>
+
+    <input id="filePicker" type="file" accept="video/*" multiple hidden>
+
+    <div id="toast" class="toast"></div>
+
+    <div id="commentsSheet" class="sheet-backdrop" hidden>
+      <section class="sheet" role="dialog" aria-modal="true" aria-label="Comments">
+        <div class="sheet-handle"></div>
+        <div class="sheet-head">
+          <strong id="commentTitle">Comments</strong>
+          <button id="closeComments" class="close">✕</button>
+        </div>
+        <div id="commentsList" class="comments-list"></div>
+        <form id="commentForm" class="comment-form">
+          <input id="commentInput" maxlength="500" placeholder="Add a comment…" autocomplete="off">
+          <button type="submit">Post</button>
+        </form>
+      </section>
+    </div>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
